@@ -69,7 +69,7 @@ body> header> #main-navigation{
     background-image: url(../image/Cover\ Page\ Rigister.jpg);
     display: flex;
     /* border: solid red 4px;  */
-    height: 88%;
+    height: 82%;
     background-size: cover;
 
 }
