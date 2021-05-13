@@ -102,7 +102,7 @@ body> header> #main-navigation{
 }
 .user-details .input-box input{
     height: 35px;
-    width:70%;
+    width:90%;
     outline: none;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -119,7 +119,7 @@ body> header> #main-navigation{
 }
 .user-details{
     font-size: large;
-    margin-right: 25px;
+    margin-bottom: 3px;
     
 }
 #btSignin{

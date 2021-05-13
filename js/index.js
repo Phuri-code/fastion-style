@@ -92,6 +92,8 @@ function login(){
 
 }
 
+
+
 function notifyMessage(message, color){
     var message_box = document.createElement("div");
     message_box.style.width = "max-content";
@@ -118,25 +120,26 @@ function notifyMessage(message, color){
 }
 
 function resetPassword(){
-    var formElement = document.getElementById("reset_psw");
-    var email = formElement.elements.namedItem("email").value;
-    var old_psw = formElement.elements.namedItem("old_psw").value;
-    var new_psw = formElement.elements.namedItem("new_psw").value;
-    var repeat_new_psw = formElement.elements.namedItem("repeat_new_psw").value;
+    var formElement = document.getElementById("reset_password");
+
+    var input_email = formElement.elements.namedItem("email").value;
+    var input_old_password = formElement.elements.namedItem("old_password").value;
+    var input_new_password  = formElement.elements.namedItem("new_password").value;
+    var input_confirm_new_password = formElement.elements.namedItem("confirm_new_password").value;
     var isUserExist = false;
     var isMatchPassword = false;
-    if(new_psw!=repeat_new_psw){
+    if(input_new_password!=input_confirm_new_password){
         notifyMessage("New Password is not Match!", "red");
     }
     else{
         let get_users = localStorage.getItem("users");
         let obj_users = JSON.parse(get_users);
         for(let i = 0; i<obj_users.length; i++){
-            if(obj_users[i].email ==email){
+            if(obj_users[i].email == input_email){
                 isUserExist = true;
-                if(obj_users[i].password == old_psw) {
+                if(obj_users[i].password == input_old_password) {
                     isMatchPassword = true;
-                    obj_users[i].password = new_psw;
+                    obj_users[i].password = input_new_password;
                     localStorage.setItem("users", JSON.stringify(obj_users));
                     notifyMessage("Reset Password Succesful", "green");
                     break;
@@ -152,6 +155,9 @@ function resetPassword(){
 
     }
 }
+
+
+
 
 function checkAdmin(){
     var currentUser =  JSON.parse(localStorage.getItem("currentUser"))  ;
