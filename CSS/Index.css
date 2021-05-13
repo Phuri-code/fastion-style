@@ -6,6 +6,7 @@ body{
   /* background-color: #f3f0eb; */
   
 }
+
 *{
   float: inline-start;
   margin: 0;
@@ -46,145 +47,169 @@ body> header> #main-navigation{
   border-color: aqua; 
   letter-spacing: 1px;
 }
-.borderPage {
-  border: 1px solid #a39292;
-  margin-bottom: 25px;
-}
-.coverHomePage{
-  width: 90%;
-  height: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  /* border: blueviolet 3px solid; */
-  background-image: url(../image/cover\ home\ 4.jpg);
-  background-size: cover;
-  margin-bottom: 150px;
-  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
-
-}
 
 
 
 #bodyPage{
-  margin-top: 200px;
-  /* border: rgb(175, 105, 255) 4px solid;    */
-  width: 100%;
-  height: 100%;
+  margin: auto;
+  margin-right: 300px;
+  margin-top: 100px;
+  /* border: hotpink 4px solid;  */
+  display: flex;
+  width: 60%;
+  height: 95%;
+  /* border: solid rgb(4, 0, 255) 4px; */
 
 }
-div > h1{
-  text-decoration: underline;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+#coverPage{
+  background-image: url(../img/Jumpsuit\ women\ 12.jpg);
+  display: flex;
+  /* border: solid red 4px;  */
+  height: 82%;
+  background-size: cover;
+
+}
+.container{
+  /* margin-top: auto;
+  margin-bottom: auto; */
+  width: 50vw;
+  height: max-content;
+  /* justify-content: center; */
+  background: #fff;
+  padding: 35px ;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #f0d7d3, #ea5455);
+  /* border: solid red 4px; */
+
+}
+.title{
   text-align: center;
-  font-size: 50px;
-}
-
-
-.menu{
-  text-align: left;
+  font-size: 25px;
+  font-weight: 500px;
+  position: relative;
   margin-bottom: 30px;
-  font-size:xx-large;
+  padding: 0%;
 }
-
-.mainDiv{
-  /* border: hotpink 4px solid; */
-  align-items: center;
-  display: flex;
+.title::before{
+  content: '';
+  position: absolute;
+  left: auto;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
-.mainBox{
-  width: 90%;
-  height: 450px;
-  margin-left: 25px;
-  display: inline-block;
-  /* border: rgb(105, 255, 113) 4px solid;  */
-
-}
-.box{
-  width: 300px;
-  box-shadow: 2px 2px 30px rgba(6, 6, 6, 0.3);
-  border-radius: 10px;
-  overflow: hidden;
-  display: inline-block;
-  padding: 5px;
-  /* border: rgb(255, 208, 105) 4px solid; */
-}
-.box:hover{
-  box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.3);
-  width: 302px;
-}
-
-#imgCoverBox{
-  background-image: url(../image/Women/CLOTHING/Blouses/blouses\ 1.jpg);
-
-
-}
-
-.slideImg{
-  /* border: rgb(105, 188, 255) 4px solid; */
-  height: 350px;
-  background-size: cover; 
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-.slideImg > img{
-  height: 350px;
-  /* border: rgb(255, 208, 105) 4px solid; */
-}
-
-.clothesDetailBox{
+.user-details .input-box input{
+  height: 35px;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  box-sizing: border-box;
-}
-.clothes-Detail{
-  display: flex;
-  flex-direction: column;
-}
-.clothes-Detail a{
-color: #3d8de9;
-margin: 5px 0px;
-font-weight: 700;
-letter-spacing: 0.5px;
-padding-right: 8px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
 }
 
 
-.iconImg{
-  width: 25px;
-  opacity: 0.7;
+
+
+
+input[type=email]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
 }
-.iconImg:hover{
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+#btRegister{
+  text-align: center;
+  padding: 5px;
+  position: relative;
+  width: 100px;
+  font-size: 15px;
+  color: #131618;
+  border: 2px solid #eb6896;
+  letter-spacing: 0.5px;
+  cursor:pointer;
+  border-radius: 10px;
+  transition: 0.3s;
+  opacity: 0.8;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+
+.input-box{
+  margin-top: 20px;
+
+}
+#btSubmit:hover{
   opacity: 1;
 }
-
-
-/* .MoreOption{
-  align-items: center;
-  display: flex;
-} */
-
-
-.btSeeMore{
-  width: 160px;
-  height: 40px;
-  background-color: #ffffff;
-  color: #252525;
-  font-weight: 700;
-  letter-spacing: 1px;
-  border-radius: 20px;
-  opacity: 0.7;
-  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
   
+  border-color: #9b59b6;
 }
-.btSeeMore:hover{
-  color: #ffffff;
-  background-color: #eeb2ed;
-  transition: all ease 0.3s;
-  opacity: 1;
+.category{
+  margin-left: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+
+}
+.gender-title{
+  margin-right: 20px;
+} 
+.gender{
+  color: rgb(41, 31, 31);
+}
+p{
+  text-align: center;
+  margin-bottom: 10px;
+}
+a {
+  color: rgb(71, 30, 255);
+}
+/* Set a grey background color and center the text of the "sign in" section */
+form{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+.blue{
+  color: blue;
+}
+.red{
+  color: red;
+}
+.italic{
+  font-style: italic;
+}
+.bold{
+  font-weight: bold;
+}
+.message_box {
+  -webkit-animation: DisapearAnimation 3s forwards; 
+  animation: DisapearAnimation 3s forwards;
+}
+@keyframes DisapearAnimation {
+  0%   {opacity: 0;}
+  20%  {opacity: 1;}
+  80%  {opacity: 1;}
+  100% {opacity: 0;}
+}
+@-webkit-keyframes DisapearAnimation {
+  0%   {opacity: 0;}
+  10% {opacity: 0.5; }
+  50%  {opacity: 1;}
+  90% {opacity: 0.5; }
+  100% {opacity: 0;}
+}
