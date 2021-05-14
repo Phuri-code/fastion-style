@@ -76,8 +76,9 @@ body> header> #main-navigation{
     padding: 35px 40px;
     border-radius: 5px;
     /* background: linear-gradient(135deg, #fefcee, #e6d1ab); */
-    background: linear-gradient(135deg, #f0d7d3, #ff7d00);
-    box-shadow: 2px 2px 30px rgba(6, 6, 6, 0.3);
+    background: linear-gradient(135deg, #bfbfbf, #efefef);
+    border: solid #52160d 4px;
+    /* box-shadow: 2px 2px 30px rgba(6, 6, 6, 0.3); */
 
 
 
@@ -98,7 +99,7 @@ body> header> #main-navigation{
     bottom: 0;
     height: 3px;
     width: 30px;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    background: linear-gradient(135deg, #71b7e6, #52160d);
 }
 .user-details .input-box input{
     height: 35px;
