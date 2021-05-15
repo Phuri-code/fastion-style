@@ -79,7 +79,9 @@ function register(){
         }
         obj_users.push(user);
         localStorage.setItem("users", JSON.stringify(obj_users));
+
         window.open('./home.html',"_self");
+
 
     }
 }
@@ -114,7 +116,9 @@ function login(){
             }
             else{
                 localStorage.setItem("currentUser",JSON.stringify(obj_users[i]));
-                window.open('./home.html?email='+email+"&password="+ password,"_self");
+                // window.open('./home.html?email='+email+"&password="+ password,"_self");
+
+                window.open('./home.html',"_self");
             }
         }  
     }
