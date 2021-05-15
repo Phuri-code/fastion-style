@@ -64,10 +64,10 @@ function register(){
         notifyMessage("Password is not Match!","red");
     }
     else{
-        if(localStorage.getItem("users")==null)
-        {
-            localStorage.setItem("users", "[ ]");
-        }
+        // if(localStorage.getItem("users")==null)
+        // {
+        //     localStorage.setItem("users", "[ ]");
+        // }
 
         
         var get_users = localStorage.getItem("users");
