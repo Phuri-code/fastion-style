@@ -158,10 +158,10 @@ function notifyMessage(message, color){
 function resetPassword(){
     var formElement = document.getElementById("reset_password");
 
-    var input_email = formElement.elements.namedItem("email").value;
-    var input_old_password = formElement.elements.namedItem("old-password").value;
-    var input_new_password  = formElement.elements.namedItem("new-password").value;
-    var input_confirm_new_password = formElement.elements.namedItem("confirm-new-password").value;
+    var input_email = formElement.elements.namedItem("gmail").value;
+    var input_old_password = formElement.elements.namedItem("old_password").value;
+    var input_new_password  = formElement.elements.namedItem("new_password").value;
+    var input_confirm_new_password = formElement.elements.namedItem("confirm_new_password").value;
     var isUserExist = false;
     var isMatchPassword = false;
     if(input_new_password!=input_confirm_new_password){
@@ -178,7 +178,10 @@ function resetPassword(){
                     obj_users[i].password = input_new_password;
                     localStorage.setItem("users", JSON.stringify(obj_users));
                     notifyMessage("Reset Password Succesful", "green");
+                    window.open('./home.html',"_self");
+
                     break;
+
                 }
             }
         }
