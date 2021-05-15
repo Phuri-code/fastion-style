@@ -37,11 +37,7 @@ function showSlides(n) {
 function setAdmin(){
     if(localStorage.getItem("users")==null){
         let admin_user = {
-            Name: "Admin",
             email: "admin@gmail.com",
-            gender:"",
-            birthday:"",
-            country: "Cambodia",
             password: "admin",
             cart:[]
         }
@@ -118,7 +114,7 @@ function login(){
             }
             else{
                 localStorage.setItem("currentUser",JSON.stringify(obj_users[i]));
-                window.open('./home.html',"_self");
+                window.open('./home.html?email='+email+"&password="+ password,"_self");
             }
         }  
     }
