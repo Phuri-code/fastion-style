@@ -80,7 +80,7 @@ function register(){
         obj_users.push(user);
         localStorage.setItem("users", JSON.stringify(obj_users));
 
-        window.open('./home.html',"_self");
+        window.open('./login.html',"_self");
 
 
     }
