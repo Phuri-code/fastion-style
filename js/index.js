@@ -191,6 +191,7 @@ function resetPassword(){
         else if(!isMatchPassword){
             notifyMessage("Old Password is not matched!", "red");
         }
+        window.open("./home.html","_self");
 
     }
 }
