@@ -73,7 +73,7 @@ h2{
     
 }
 .container .row100 .inputBox input,
-.container .row100 .inputBox.textarea textarea
+.container .row100 .inputBox.textarea
 {
     position: absolute;
     width: 85%;

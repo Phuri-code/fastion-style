@@ -217,8 +217,15 @@ function checkAdmin(){
 
 function addProduct(){
     var product_form = document.getElementById("add_product");
+
     var p_name = product_form.elements.namedItem("product_name").value;
     var p_description = product_form.elements.namedItem("description").value;
+
+
+
+
+
+
     var p_price = product_form.elements.namedItem("price").value;
     var p_image_url = product_form.elements.namedItem("img_url").value;
 
