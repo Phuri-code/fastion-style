@@ -21,12 +21,44 @@
     <form action="#" onsubmit="addProduct(); return false;" id="add_product">
         <label for="product_name">Product Name:</label>
         <input type="text" name="product_name" required>
+
         <label for="description">Description:</label>
         <input type="text" name="description" required>
+
+
+        <!-- Gender -->
+
+        <div class="category">
+            <label for="p_category" >Category:</label>
+
+            <input type="radio" name="gender" id="women" required>
+            <label for="women_category"  class="p_category">Women</label>
+
+            <input type="radio" name="gender" id="men" required>
+            <label for="men_category"  class="p_category">Men</label>
+
+            <input type="radio" name="gender" id="boys" required>
+            <label for="boys_category"  class="p_category">Boys</label>
+
+            <input type="radio" name="gender" id="girls" required>
+            <label for="girls_category"  class="p_category">Boys</label>
+
+        </div>
+        
+
+
+
+
+
+
+
+
         <label for="price">Price $:</label>
         <input type="number" name="price" required>
+
         <label for="img_url">Image URL:</label>
         <input type="url" name="img_url" required>
+
         <input type="submit" value="Add">
     </form>
 </body>

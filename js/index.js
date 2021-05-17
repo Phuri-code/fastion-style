@@ -277,7 +277,7 @@ function displayProducts(){
         let delete_button = document.createElement("button");
         delete_button.innerHTML = "Delete";
         delete_button.onclick = function(){
-            deleteProduct(obj_product[i].name);
+            deleteProduct(obj_product[i].name,obj_product[i].description,obj_product[i].price);
         }
         p_action.appendChild(delete_button);
         p_row.appendChild(p_action);
@@ -286,10 +286,10 @@ function displayProducts(){
     }
 }
 
-function deleteProduct(product_name){
+function deleteProduct(product_name, product_description,product_price){
     var obj_product = JSON.parse(localStorage.getItem("products"));
     for(let i= 0 ; i<obj_product.length;i++){
-        if(obj_product[i].name == product_name){
+        if(obj_product[i].name == product_name && obj_product[i].description == product_description &&obj_product[i].price == product_price){
             obj_product.splice(i,1);
             localStorage.setItem("products", JSON.stringify(obj_product));
             notifyMessage("Delete Sucessful", "green");
@@ -407,7 +407,7 @@ function displayCartItem(){
         let delete_button = document.createElement("button");
         delete_button.innerHTML = "Delete";
         delete_button.onclick = function(){
-            deleteCartItem(current_user.cart[i].name);
+            deleteCartItem(current_user.cart[i].name, current_user.cart[i].description,current_user.cart[i].price);
         }
         p_action.appendChild(delete_button);
         p_row.appendChild(p_action);
@@ -420,10 +420,10 @@ function displayCartItem(){
     total_element.innerHTML = "$"+total_price;
 }
 
-function deleteCartItem(item_name){
+function deleteCartItem(item_name, item_description, item_price){
     var current_user = JSON.parse(localStorage.getItem("currentUser"));
     for(let i=0; i< current_user.cart.length; i++){
-        if(current_user.cart[i].name ==item_name){
+        if(current_user.cart[i].name ==item_name && current_user.cart[i].description ==item_description && current_user.cart[i].price ==item_price){
             current_user.cart.splice(i,1);
             break;
         } 
