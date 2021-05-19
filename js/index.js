@@ -314,41 +314,68 @@ function displayHomeProduct(){
 
     for(let i= 0 ; i<obj_product.length;i++){
         var p_card = document.createElement("div");
-        p_card.classList.add("product-card");
+        p_card.classList.add("Product_Card");
+
+        var p_box = document.createElement("div");
+        p_box.classList.add("product_box");
+        p_card.appendChild(p_box);
 
         var p_image = document.createElement("div");
-        p_image.classList.add("product-image");
+        p_image.classList.add("product_image");
         p_image.style.backgroundImage = "url('"+obj_product[i].imageUrl+"')";
-        p_card.appendChild(p_image);
+        p_box.appendChild(p_image);
 
-        var p_info = document.createElement("div");
-        p_info.classList.add("product-info");
+        var p_detail = document.createElement("div")
+        p_detail.classList.add("product_detail");
+        p_box.appendChild(p_detail);
 
-        var p_name = document.createElement("h5");
+
+
+        var c_detail = document.createElement("div");
+        c_detail.classList.add("clothes-Detail");
+        p_detail.appendChild(c_detail);
+
+        var p_name = document.createElement("h3");
         p_name.innerHTML = obj_product[i].name;
-        p_info.appendChild(p_name);
+        c_detail.appendChild(p_name);
 
-        var p_description = document.createElement("p");
-        p_description.innerHTML = obj_product[i].description;
-        p_info.appendChild(p_description);
+        d_price = document.createElement("div");
+        p_detail.appendChild(d_price);
 
-        var p_price = document.createElement("h5");
-        p_price.innerHTML = "$"+obj_product[i].price ;
-        p_info.appendChild(p_price);
+        var p_price = document.createElement("h3");
+        p_price.innerHTML ="$"+ obj_product[i].price;
+        d_price.appendChild(p_price)
 
-        var p_button = document.createElement("button");
-        p_button.innerHTML="Add to Cart";
-        p_button.onclick = function(){
+        var icon_heart = document.createElement("div");
+        icon_heart.classList.add("iconImg");
+        // icon_heart.style.backgroundImage = url("./img/heart.png");
+        p_detail.appendChild(icon_heart);
+
+        var icon_email = document.createElement("div");
+        icon_email.classList.add("iconImg");
+        // icon_email.style.backgroundImage = src("./img/mail.png")
+        // icon_email.onclick 
+        p_detail.appendChild(icon_email);
+
+        var icon_order = document.createElement("div");
+        icon_order.classList.add("iconImg");
+        // icon_order.style.backgroundImage = src("./img/mail.png")
+        icon_order.onclick= function()
+        {
             addToCart(obj_product[i]);
         }
-
-        p_info.appendChild(p_button);
-
-        p_card.appendChild(p_info);
-
-        product_box.appendChild(p_card);
+        p_detail.appendChild(icon_order);
     }
+    p_card.appendChild(p_box);
+
+
+    product_box.appendChild(p_card);
+
 }
+
+
+
+
 
 function addToCart(obj_product){
     var cart_number = document.getElementById("cart_number");
