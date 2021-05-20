@@ -525,6 +525,15 @@ function displayHomeProduct(){
         icon_heart.src ="./img/heart.png";
         p_info.appendChild(icon_heart);
 
+        var mail_link = document.createElement("a");
+        mail_link.href="./Contact_Us.html";
+        p_info.appendChild(mail_link);
+
+        var icon_email = document.createElement("img");
+        icon_email.classList.add("iconImg");
+        icon_email.src = "./img/mail.png";
+        mail_link.appendChild(icon_email);
+
         
         var icon_order = document.createElement("img");
         icon_order.classList.add("iconImg");
@@ -551,67 +560,6 @@ function displayHomeProduct(){
 
 
 
-// function displayHomeProduct(){
-
-//     var cart_number = document.getElementById("cart_number");
-//     var current_user = JSON.parse(localStorage.getItem("currentUser"));
-//     cart_number.innerHTML = current_user.cart.length; 
-
-//     var obj_product = JSON.parse(localStorage.getItem("products"));
-//     var product_box = document.getElementById("product_box");
-
-//     for(let i= 0 ; i<obj_product.men.length;i++){
-//         var p_card = document.createElement("div");
-//         p_card.classList.add("product-card");
-
-//         var p_image = document.createElement("div");
-//         p_image.classList.add("product-image");
-//         p_image.style.backgroundImage = "url('"+obj_product.men[i].imageUrl+"')";
-//         p_card.appendChild(p_image);
-
-//         var p_detail = document.createElement("div")
-//         p_detail.classList.add("product-info");
-
-
-
-//         // var c_detail = document.createElement("div");
-//         // c_detail.classList.add("clothes-Detail");
-//         // p_detail.appendChild(c_detail);
-
-//         var p_name = document.createElement("h3");
-//         p_name.innerHTML = obj_product.men[i].name;
-//         p_detail.appendChild(p_name);
-
-
-//         var p_price = document.createElement("h3");
-//         p_price.innerHTML ="$"+ obj_product.men[i].price;
-//         p_detail.appendChild(p_price)
-
-//         var icon_heart = document.createElement("img");
-//         icon_heart.classList.add("iconImg");
-//         icon_heart.src ="./img/heart.png";
-//         p_detail.appendChild(icon_heart);
-
-//         var icon_email = document.createElement("div");
-//         icon_email.classList.add("iconImg");
-//         // icon_email.style.backgroundImage = src("./img/mail.png")
-//         // icon_email.onclick 
-//         p_detail.appendChild(icon_email);
-
-//         var icon_order = document.createElement("div");
-//         icon_order.classList.add("iconImg");
-//         // icon_order.style.backgroundImage = src("./img/mail.png")
-//         icon_order.onclick= function()
-//         {
-//             addToCart(obj_product.men[i]);
-//         }
-//         p_detail.appendChild(icon_order);
-//         p_card.appendChild(p_detail);
-//         product_box.appendChild(p_card);
-
-//     }
-
-// }
 
 
 
