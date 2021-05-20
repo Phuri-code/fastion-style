@@ -599,7 +599,7 @@ function displayHomeProduct(){
         icon_order.classList.add("iconImg");
         icon_order.src ="./img/order.png";
         icon_order.onclick = function(){
-            addToCart(obj_product.men[i]);
+            addToCart(obj_product.women[i]);
         }
 
         p_info.appendChild(icon_order);
@@ -656,7 +656,7 @@ function displayHomeProduct(){
         icon_order.classList.add("iconImg");
         icon_order.src ="./img/order.png";
         icon_order.onclick = function(){
-            addToCart(obj_product.men[i]);
+            addToCart(obj_product.boys[i]);
         }
 
         p_info.appendChild(icon_order);
@@ -713,7 +713,7 @@ function displayHomeProduct(){
         icon_order.classList.add("iconImg");
         icon_order.src ="./img/order.png";
         icon_order.onclick = function(){
-            addToCart(obj_product.men[i]);
+            addToCart(obj_product.girls[i]);
         }
 
         p_info.appendChild(icon_order);
@@ -856,3 +856,5 @@ function deleteCartItem(item_name, item_description, item_price){
         }
     } 
 }
+
+
