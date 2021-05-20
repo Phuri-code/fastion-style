@@ -1,3 +1,4 @@
+
 body{
    
   height: 100vh;
@@ -92,7 +93,6 @@ body> header> #main-navigation{
   margin-left: 25px;
   display: inline-block;
   /* border: rgb(105, 255, 113) 4px solid;  
-<<<<<<< Updated upstream
 
 }
 #product_box{
@@ -104,19 +104,6 @@ body> header> #main-navigation{
   display: flex;
 	flex-wrap: wrap; */
 
-=======
-
-}
-#product_box{
-  width: 300px;
-  box-shadow: 2px 2px 30px rgba(6, 6, 6, 0.3);
-  border-radius: 10px;
-  overflow: hidden;
-  padding: 5px;
-  display: flex;
-	flex-wrap: wrap; */
-
->>>>>>> Stashed changes
   /* border: rgb(255, 208, 105) 4px solid; */
 /* }
 .product_image{
@@ -145,22 +132,9 @@ box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.25);
 
 }
 #product_box{
-<<<<<<< Updated upstream
 display: flex;
 flex-wrap: wrap;
   width: 100%;
-=======
-<<<<<<< HEAD
-	display: flex;
-	flex-wrap: wrap;
-    width: 100%;
-  margin-left: 30px;
-=======
-display: flex;
-flex-wrap: wrap;
-  width: 100%;
->>>>>>> 97d693d6b26b0e54a74a256503e8a88a03df695d
->>>>>>> Stashed changes
 }
 .product-image {
   width: 100%;
@@ -190,61 +164,6 @@ margin: 5px 0px;
 font-weight: 700;
 letter-spacing: 0.5px;
 padding-right: 8px;
-<<<<<<< Updated upstream
-}
-.iconImg{
-  width: 25px;
-  opacity: 0.7;
-  cursor: pointer;
-}
-/*------tap--------*/
-/* .logo{
-  width: 10px;
-} */
-nav{
-  display: flex;
-  padding: 2% 6%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-nav img{
-  width: 150px;
-}
-.nav-link{
-  flex: 1;
-  text-align: right;
-}
-.nav-link ul li{
-  list-style: none;
-  display: inline-block;
-  padding: 8px 12px;
-  position: relative;
-
-}
-.nav-link ul li a{
-  color: rgb(8, 8, 8);
-  text-decoration: none;
-  font-size: 15px;
-}
-.nav-link ul li::after{
-  content: '';
-  width: 0%;
-  height: 2px;
-  background: #070707;
-  display: block;
-  margin: auto;
-  transition: 0.5s;
-}
-.nav-link ul li:hover::after{
-  width: 100%;
-}
-#product_box{
-	display: flex;
-	flex-wrap: wrap;
-    width: 100%;
-=======
->>>>>>> Stashed changes
 }
 .iconImg{
   width: 25px;
@@ -298,12 +217,6 @@ nav img{
 	flex-wrap: wrap;
     width: 100%;
 }
-.iconImg{
-  width: 25px;
-  opacity: 0.7;
-  cursor: pointer;
-}
-
 
   
   .active {
