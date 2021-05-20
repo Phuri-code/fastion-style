@@ -4,83 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
     <title>Fashion Style Shope </title>
 </head>
 <link rel="stylesheet" href="./css/home.css">
 <script src="./js/index.js"></script>
 <body onload="checkAdmin(); displayHomeProduct(); return false;">
-
     <header>
+        <nav>
         <!-- Logo -->
-        <div id="logo">
-            <a href="#"> <img src="./img/Fashion Style logo tra- .png" id="logoImg" alt="logo"></a>
-        </div>
-        <!-- Main Navigation -->
-        <div id="main-navigation">
-            <!-- Home Page -->
-            <div class="web-tab">
-                <input type="button" onclick="alert('Hello World!')" class="tab" value="Home">
-            </div>
-            <!-- Women Page -->
-            <div class="web-tab">
-                <input type="button" onclick="alert('Hello World!')" class="tab" value="Women">
-            </div>
-            <!-- Men Page -->
-            <div class="web-tab">
-                <input type="button" onclick="alert('Hello World!')" class="tab" value="MEN">
-            </div>
-            <!-- Boy Page -->
-            <div class="web-tab">
-                <input type="button" onclick="alert('Hello World!')" class="tab" value="BOYS">
-            </div>
-            <!-- Girls Page -->
-            <div class="web-tab">
-                <input type="button" onclick="alert('Hello World!')" class="tab" value="GIRLS">
-            </div>
-            <!-- My Account Tab -->
-              <div class="web-tab">
-                <input type="button" onclick="alert('Hello World!')" class="tab" value="MY Account">
-              </div>
-
-
+      <div class="logo"> <a href="home.html"><img src="./img/Fashion Style logo tra- .png" id="logoImg" alt="logo"></a></div> 
+       <div class="nav-link" id="main-navigation">       
+            <ul>
+                <li ><a href="home.html">HOME</a></li>         
+                <li ><a href="men.html">MAN</a></li>
+                <li ><a href="">WOMAN</a></li>     
+                <li ><a href="">GIRL</a></li>
+                <li ><a href="">BOY</a></li>
+                <li ><a href="">MY ACOUNT</a></li>
+                <li ><a href="">CONTACT US</a></li>
+                <li ><a href="">ABOUT US</a></li>
             <!-- Cart Page -->
-            <div  class="web-tab" >
-                <a style=" padding: 20px;;" href="./cart_page.html"><img id="cart"  src="./img/order.png" ><div id="cart_number"></div></a>
-            </div>
-
-
-              <!-- About Us Tab -->
-              <div class="web-tab">
-                <input type="button" onclick="alert('Hello World!')" class="tab" value="About Us">
-              </div>
-              <!-- Contact Us Tab -->
-              <div class="web-tab">
-                <a href="./Contact_Us.html">
-                <input type="button" onclick="" class="tab" value="Contact Us">
-                </a>
-              </div>
-
-            <!-- Admin -->
-
+     <li><a style=" padding: 20px;" href="./cart_page.html"><img id="cart"  src="./img/order.png" ><div id="cart_number"></div></a></li>
             <div id="admin_link" style="float:right">
                 <a class="active" href="./admin_page.html"> Admin </a>
             </div>
-
-
-        </div> 
-        
+         </ul>
+        </div>
+     </nav>
     </header>  
     <div id="bodyPage">
         <h1>WELCOME TO OUR SHOP</h1>
-        <hr class="borderPage">
-
-
-       
+        <hr class="borderPage">       
         <div class="coverHomePage">
         </div>
+<<<<<<< Updated upstream
 
 
         <div onload="displayHomeProduct(); return false;" id="product_box">
+=======
+        <div onload="displayHomeProduct(); return false;" id="product_box">    
+            <!-- <div class="Product_Card">
+                <div class="product_box">
+                    <div class="product_image" style="background-image: url(./img/Jumpsuit\ women\ 1.jpg);">
+
+
+
+                    </div>
+                    <div class="product_detail">
+                        <div class="clothes-Detail">
+
+                            <h3 style="padding: 5px;">Jumpsuit</h3>
+
+                        </div>
+                        <div >
+                            <h3 style="color: #065125 ;" >$ 50</h3>
+                        </div>
+                        <div class="iconImg" style="background-image: url(./img/heart.png);">
+
+
+                        </div>
+                        <div class="iconImg" style="background-image: url(./img/mail.png);">
+
+
+                        </div>
+                        <div class="iconImg" style="background-image: url(./img/order.png);">
+
+
+                        </div>
+                    </div>
+                </div>
+             </div> -->
+
+             
+>>>>>>> Stashed changes
         
         </div>
     

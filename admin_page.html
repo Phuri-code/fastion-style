@@ -28,22 +28,11 @@
 
         <!-- Products Category -->
 
-        <div class="category">
-            <label for="p_category" >Category:</label>
-
-            <input type="radio" name="gender" id="women" required>
-            <label for="women_category"  class="p_category">Women</label>
-
-            <input type="radio" name="gender" id="men" required>
-            <label for="men_category"  class="p_category">Men</label>
-
-            <input type="radio" name="gender" id="boys" required>
-            <label for="boys_category"  class="p_category">Boys</label>
-
-            <input type="radio" name="gender" id="girls" required>
-            <label for="girls_category"  class="p_category">Girls</label>
-
-        </div>
+        <label for="p_category" >Category:</label>
+        <select name="p_category">
+            <option value="men">Men</option>
+            <option value="women">Women</option>
+        </select>
         <label for="price">Price $:</label>
         <input type="number" name="price" required>
 

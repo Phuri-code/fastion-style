@@ -218,7 +218,7 @@ function addProduct(){
     var p_name = product_form.elements.namedItem("product_name").value;
     var p_description = product_form.elements.namedItem("description").value;
 
-
+    var p_category = product_form.elements.namedItem("p_category").value;
 
 
 
@@ -226,8 +226,13 @@ function addProduct(){
     var p_price = product_form.elements.namedItem("price").value;
     var p_image_url = product_form.elements.namedItem("img_url").value;
 
+    let products = {
+        men :[],
+        women:[]
+    };
+
     if(localStorage.getItem("products")==null){
-        localStorage.setItem("products", "[]");
+        localStorage.setItem("products", JSON.stringify(products));
     }
 
     var obj_product = JSON.parse(localStorage.getItem("products"));
@@ -238,7 +243,14 @@ function addProduct(){
         price:p_price,
         imageUrl:p_image_url
     }
-    obj_product.push(product);
+    if(p_category == "men"){
+        obj_product.men.push(product);
+    }
+
+    else if(p_category == "women"){
+        obj_product.women.push(product);
+    }
+
     localStorage.setItem("products", JSON.stringify(obj_product));
     notifyMessage("Product is added", "green");
     displayProducts();
@@ -255,25 +267,25 @@ function displayProducts(){
 
     var obj_product = JSON.parse(localStorage.getItem("products"));
 
-    for(let i= 0 ; i<obj_product.length;i++){
+    for(let i= 0 ; i<obj_product.men.length;i++){
         let p_row = document.createElement("tr");
 
         let p_name = document.createElement("td");
-        p_name.innerHTML = obj_product[i].name;
+        p_name.innerHTML = obj_product.men[i].name;
         p_row.appendChild(p_name);
 
         let p_image = document.createElement("td");
         let img = document.createElement("img");
-        img.src = obj_product[i].imageUrl;
+        img.src = obj_product.men[i].imageUrl;
         p_image.appendChild(img);
         p_row.appendChild(p_image);
 
         let p_description = document.createElement("td");
-        p_description.innerHTML = obj_product[i].description;
+        p_description.innerHTML = obj_product.men[i].description;
         p_row.appendChild(p_description);
 
         let p_price = document.createElement("td");
-        p_price.innerHTML = obj_product[i].price +"$";
+        p_price.innerHTML = obj_product.men[i].price +"$";
         p_row.appendChild(p_price);
         
         
@@ -281,7 +293,7 @@ function displayProducts(){
         let delete_button = document.createElement("button");
         delete_button.innerHTML = "Delete";
         delete_button.onclick = function(){
-            deleteProduct(obj_product[i].name,obj_product[i].description,obj_product[i].price);
+            deleteProduct(obj_product.men[i].name,obj_product.men[i].description,obj_product.men[i].price);
         }
         p_action.appendChild(delete_button);
         p_row.appendChild(p_action);
@@ -312,17 +324,25 @@ function displayHomeProduct(){
     var obj_product = JSON.parse(localStorage.getItem("products"));
     var product_box = document.getElementById("product_box");
 
-    for(let i= 0 ; i<obj_product.length;i++){
+    for(let i= 0 ; i<obj_product.men.length;i++){
         var p_card = document.createElement("div");
         p_card.classList.add("product-card");
 
         var p_image = document.createElement("div");
         p_image.classList.add("product-image");
+<<<<<<< Updated upstream
         p_image.style.backgroundImage = "url('"+obj_product[i].imageUrl+"')";
         p_card.appendChild(p_image);
 
         var p_info = document.createElement("div");
         p_info.classList.add("product-info");
+=======
+        p_image.style.backgroundImage = "url('"+obj_product.men[i].imageUrl+"')";
+        p_card.appendChild(p_image);
+
+        var p_detail = document.createElement("div")
+        p_detail.classList.add("product-info");
+>>>>>>> Stashed changes
 
         var p_name = document.createElement("h5");
         p_name.innerHTML = obj_product[i].name;
@@ -332,6 +352,7 @@ function displayHomeProduct(){
         p_description.innerHTML = obj_product[i].description;
         p_info.appendChild(p_description);
 
+<<<<<<< Updated upstream
         var p_price = document.createElement("h5");
         p_price.innerHTML = "$"+obj_product[i].price ;
         p_info.appendChild(p_price);
@@ -345,6 +366,44 @@ function displayHomeProduct(){
         p_info.appendChild(p_button);
 
         p_card.appendChild(p_info);
+=======
+        // var c_detail = document.createElement("div");
+        // c_detail.classList.add("clothes-Detail");
+        // p_detail.appendChild(c_detail);
+
+        var p_name = document.createElement("h3");
+        p_name.innerHTML = obj_product.men[i].name;
+        p_detail.appendChild(p_name);
+
+
+        var p_price = document.createElement("h3");
+        p_price.innerHTML ="$"+ obj_product.men[i].price;
+        p_detail.appendChild(p_price)
+
+        var icon_heart = document.createElement("img");
+        icon_heart.classList.add("iconImg");
+        icon_heart.src ="./img/heart.png";
+        p_detail.appendChild(icon_heart);
+
+        var icon_email = document.createElement("div");
+        icon_email.classList.add("iconImg");
+        // icon_email.style.backgroundImage = src("./img/mail.png")
+        // icon_email.onclick 
+        p_detail.appendChild(icon_email);
+
+        var icon_order = document.createElement("div");
+        icon_order.classList.add("iconImg");
+        // icon_order.style.backgroundImage = src("./img/mail.png")
+        icon_order.onclick= function()
+        {
+            addToCart(obj_product.men[i]);
+        }
+        p_detail.appendChild(icon_order);
+        p_card.appendChild(p_detail);
+        product_box.appendChild(p_card);
+
+    }
+>>>>>>> Stashed changes
 
         product_box.appendChild(p_card);
     }
