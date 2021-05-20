@@ -227,8 +227,10 @@ function addProduct(){
     var p_image_url = product_form.elements.namedItem("img_url").value;
 
     let products = {
+        women:[],
         men :[],
-        women:[]
+        boys:[],
+        girls:[]
     };
 
     if(localStorage.getItem("products")==null){
@@ -239,6 +241,7 @@ function addProduct(){
 
     let product = {
         name:p_name,
+        catigory: p_category,
         description: p_description,
         price:p_price,
         imageUrl:p_image_url
@@ -249,6 +252,14 @@ function addProduct(){
 
     else if(p_category == "women"){
         obj_product.women.push(product);
+    }
+    else if(p_category=="boys")
+    {
+        obj_product.boys.push(product);
+    }
+    else if(p_category == "girls")
+    {
+        obj_product.girls.push(product);
     }
 
     localStorage.setItem("products", JSON.stringify(obj_product));
@@ -267,12 +278,16 @@ function displayProducts(){
 
     var obj_product = JSON.parse(localStorage.getItem("products"));
 
-    for(let i= 0 ; i<obj_product.men.length;i++){
+    for(let i= 0 ; i<obj_product.men.length;i++)
+        {
+
         let p_row = document.createElement("tr");
 
         let p_name = document.createElement("td");
         p_name.innerHTML = obj_product.men[i].name;
         p_row.appendChild(p_name);
+
+
 
         let p_image = document.createElement("td");
         let img = document.createElement("img");
@@ -293,20 +308,132 @@ function displayProducts(){
         let delete_button = document.createElement("button");
         delete_button.innerHTML = "Delete";
         delete_button.onclick = function(){
-            deleteProduct(obj_product.men[i].name,obj_product.men[i].description,obj_product.men[i].price);
+            deleteMenProduct(obj_product.men[i].name,obj_product.men[i].description,obj_product.men[i].price,obj_product.men[i].imageUrl);
         }
         p_action.appendChild(delete_button);
         p_row.appendChild(p_action);
         p_table.appendChild(p_row);
 
     }
+    for(let i= 0 ; i<obj_product.women.length;i++)
+    {
+
+        let p_row = document.createElement("tr");
+
+        let p_name = document.createElement("td");
+        p_name.innerHTML = obj_product.women[i].name;
+        p_row.appendChild(p_name);
+
+
+
+        let p_image = document.createElement("td");
+        let img = document.createElement("img");
+        img.src = obj_product.women[i].imageUrl;
+        p_image.appendChild(img);
+        p_row.appendChild(p_image);
+
+        let p_description = document.createElement("td");
+        p_description.innerHTML = obj_product.women[i].description;
+        p_row.appendChild(p_description);
+
+        let p_price = document.createElement("td");
+        p_price.innerHTML = obj_product.women[i].price +"$";
+        p_row.appendChild(p_price);
+    
+    
+        let p_action = document.createElement("td");
+        let delete_button = document.createElement("button");
+        delete_button.innerHTML = "Delete";
+        delete_button.onclick = function(){
+            deleteWomenProduct(obj_product.women[i].name,obj_product.women[i].description,obj_product.women[i].price,obj_product.women[i].imageUrl);
+        }
+        p_action.appendChild(delete_button);
+        p_row.appendChild(p_action);
+        p_table.appendChild(p_row);
+
+    }
+    for(let i= 0 ; i<obj_product.boys.length;i++)
+    {
+
+        let p_row = document.createElement("tr");
+
+        let p_name = document.createElement("td");
+        p_name.innerHTML = obj_product.boys[i].name;
+        p_row.appendChild(p_name);
+
+
+
+        let p_image = document.createElement("td");
+        let img = document.createElement("img");
+        img.src = obj_product.boys[i].imageUrl;
+        p_image.appendChild(img);
+        p_row.appendChild(p_image);
+
+        let p_description = document.createElement("td");
+        p_description.innerHTML = obj_product.boys[i].description;
+        p_row.appendChild(p_description);
+
+        let p_price = document.createElement("td");
+        p_price.innerHTML = obj_product.boys[i].price +"$";
+        p_row.appendChild(p_price);
+    
+    
+        let p_action = document.createElement("td");
+        let delete_button = document.createElement("button");
+        delete_button.innerHTML = "Delete";
+        delete_button.onclick = function(){
+            deleteBoysProduct(obj_product.boys[i].name,obj_product.boys[i].description,obj_product.boys[i].price,obj_product.boys[i].imageUrl);
+        }
+        p_action.appendChild(delete_button);
+        p_row.appendChild(p_action);
+        p_table.appendChild(p_row);
+
+    }
+    for(let i= 0 ; i<obj_product.girls.length;i++)
+    {
+
+        let p_row = document.createElement("tr");
+
+        let p_name = document.createElement("td");
+        p_name.innerHTML = obj_product.girls[i].name;
+        p_row.appendChild(p_name);
+
+
+
+        let p_image = document.createElement("td");
+        let img = document.createElement("img");
+        img.src = obj_product.girls[i].imageUrl;
+        p_image.appendChild(img);
+        p_row.appendChild(p_image);
+
+        let p_description = document.createElement("td");
+        p_description.innerHTML = obj_product.girls[i].description;
+        p_row.appendChild(p_description);
+
+        let p_price = document.createElement("td");
+        p_price.innerHTML = obj_product.girls[i].price +"$";
+        p_row.appendChild(p_price);
+    
+    
+        let p_action = document.createElement("td");
+        let delete_button = document.createElement("button");
+        delete_button.innerHTML = "Delete";
+        delete_button.onclick = function(){
+            deleteGirlsProduct(obj_product.girls[i].name,obj_product.girls[i].description,obj_product.girls[i].price,obj_product.girls[i].imageUrl);
+        }
+        p_action.appendChild(delete_button);
+        p_row.appendChild(p_action);
+        p_table.appendChild(p_row);
+
+    }
+
 }
 
-function deleteProduct(product_name, product_description,product_price){
+function deleteMenProduct(product_name, product_description,product_price,product_Url){
     var obj_product = JSON.parse(localStorage.getItem("products"));
-    for(let i= 0 ; i<obj_product.length;i++){
-        if(obj_product[i].name == product_name && obj_product[i].description == product_description &&obj_product[i].price == product_price){
-            obj_product.splice(i,1);
+    for(let i= 0 ; i<obj_product.men.length;i++){
+        if(obj_product.men[i].name == product_name && obj_product.men[i].description == product_description &&obj_product.men[i].price == product_price && obj_product.men[i].imageUrl ==product_Url){
+            obj_product.men.splice(i,1);
             localStorage.setItem("products", JSON.stringify(obj_product));
             notifyMessage("Delete Sucessful", "green");
             displayProducts();
@@ -314,6 +441,60 @@ function deleteProduct(product_name, product_description,product_price){
         } 
     }
 }
+
+
+function deleteWomenProduct(product_name, product_description,product_price,product_Url){
+    var obj_product = JSON.parse(localStorage.getItem("products"));
+    for(let i= 0 ; i<obj_product.women.length;i++){
+        if(obj_product.women[i].name == product_name && obj_product.women[i].description == product_description &&obj_product.women[i].price == product_price && obj_product.women[i].imageUrl ==product_Url){
+            obj_product.women.splice(i,1);
+            localStorage.setItem("products", JSON.stringify(obj_product));
+            notifyMessage("Delete Sucessful", "green");
+            displayProducts();
+            break;
+        } 
+    }
+}
+
+function deleteBoysProduct(product_name, product_description,product_price,product_Url){
+    var obj_product = JSON.parse(localStorage.getItem("products"));
+    for(let i= 0 ; i<obj_product.boys.length;i++){
+        if(obj_product.boys[i].name == product_name && obj_product.boys[i].description == product_description &&obj_product.boys[i].price == product_price && obj_product.boys[i].imageUrl ==product_Url){
+            obj_product.boys.splice(i,1);
+            localStorage.setItem("products", JSON.stringify(obj_product));
+            notifyMessage("Delete Sucessful", "green");
+            displayProducts();
+            break;
+        } 
+    }
+}
+
+
+function deleteGirlsProduct(product_name, product_description,product_price,product_Url){
+    var obj_product = JSON.parse(localStorage.getItem("products"));
+    for(let i= 0 ; i<obj_product.girls.length;i++){
+        if(obj_product.girls[i].name == product_name && obj_product.girls[i].description == product_description &&obj_product.girls[i].price == product_price && obj_product.girls[i].imageUrl ==product_Url){
+            obj_product.girls.splice(i,1);
+            localStorage.setItem("products", JSON.stringify(obj_product));
+            notifyMessage("Delete Sucessful", "green");
+            displayProducts();
+            break;
+        } 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function displayHomeProduct(){
 
@@ -330,63 +511,14 @@ function displayHomeProduct(){
 
         var p_image = document.createElement("div");
         p_image.classList.add("product-image");
-<<<<<<< Updated upstream
-        p_image.style.backgroundImage = "url('"+obj_product[i].imageUrl+"')";
-        p_card.appendChild(p_image);
-
-        var p_info = document.createElement("div");
-        p_info.classList.add("product-info");
-=======
         p_image.style.backgroundImage = "url('"+obj_product.men[i].imageUrl+"')";
         p_card.appendChild(p_image);
 
         var p_detail = document.createElement("div")
         p_detail.classList.add("product-info");
->>>>>>> Stashed changes
-
-        var p_name = document.createElement("h5");
-        p_name.innerHTML = obj_product[i].name;
-        p_info.appendChild(p_name);
-
-        var p_description = document.createElement("p");
-        p_description.innerHTML = obj_product[i].description;
-        p_info.appendChild(p_description);
-
-<<<<<<< Updated upstream
-        var p_price = document.createElement("h5");
-        p_price.innerHTML = "$"+obj_product[i].price ;
-        p_info.appendChild(p_price);
-
-        var icon_heart = document.createElement("img")
-        // icon_heart.classList.add("iconImg");
-        // icon_heart.src ="./img/heart.png";
-        p_info.appendChild(icon_heart);
-
-        // var icon_email = document.createElement("div");
-        // icon_email.classList.add("iconImg");
-        // // icon_email.style.backgroundImage = src("./img/mail.png")
-        // // icon_email.onclick 
-        // p_detail.appendChild(icon_email);
-
-        // var icon_order = document.createElement("div");
-        // icon_order.classList.add("iconImg");
-        // // icon_order.style.backgroundImage = src("./img/mail.png")
-        // icon_order.onclick= function()
-        // {
-        //     addToCart(obj_product[i]);
-        // }
 
 
-        var p_button = document.createElement("button");
-        p_button.innerHTML="Add to Cart";
-        p_button.onclick = function(){
-            addToCart(obj_product[i]);
-        }
 
-        p_info.appendChild(p_button);
-
-        p_card.appendChild(p_info);
-=======
         // var c_detail = document.createElement("div");
         // c_detail.classList.add("clothes-Detail");
         // p_detail.appendChild(c_detail);
@@ -423,12 +555,21 @@ function displayHomeProduct(){
         product_box.appendChild(p_card);
 
     }
->>>>>>> Stashed changes
 
-        product_box.appendChild(p_card);
-    }
+
+
+
+
+
+
+
+
     
 }
+
+
+
+
 
 function addToCart(obj_product){
     var cart_number = document.getElementById("cart_number");
