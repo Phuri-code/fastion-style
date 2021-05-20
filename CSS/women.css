@@ -31,19 +31,6 @@ body{
     border: 1px solid #a39292;
     margin-bottom: 25px;
   }
-  .coverHomePage{
-    width: 90%;
-    height: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    /* border: blueviolet 3px solid; */
-    background-image: url(../img/cover\ home\ 4.jpg);
-    background-size: cover;
-    margin-bottom: 150px;
-    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-  
-  }
   #bodyPage{
     margin-top: 100px;
     /* border: rgb(175, 105, 255) 4px solid;    */

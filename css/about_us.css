@@ -1,137 +1,91 @@
+
 body{
    
-    height: 100vh;
-    text-align: left;
-    padding: 5px;
-    /* background-color: #f3f0eb; */
-    
-  }
-  *{
-    float: inline-start;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
-   
-  }
+  height: 100vh;
+  text-align: left;
+  padding: 5px;
+  /* background-color: #f3f0eb; */
+  margin: 0%;
   
-  body > header > #logo {
-    float: left;
-  }
-  body > header > #logo img{
-    height: 110px;
-  }
-  header{
-    margin: 0%;
-    padding: 0%;
-  
-  }
-  body> header> #main-navigation{
-    float: right;
-    margin-top: 50px;
-  
-  }
-  .web-tab{
-    display: inline-block;     
-  }
-  .tab{
-    width: 110px;
-    border: none;
-    font-size: large;
-    border-radius: 5px;
-    background-color: white;
-  }
-  .tab:hover{
-    border: turquoise 1px solid;
-    border-color: aqua; 
-    letter-spacing: 1px;
-  }
-  .borderPage {
-    border: 1px solid #a39292;
-    margin-bottom: 25px;
-  }
-  .coverHomePage{
-    width: 90%;
-    height: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    /* border: blueviolet 3px solid; */
-    background-image: url(../img/cover\ home\ 4.jpg);
-    background-size: cover;
-    margin-bottom: 150px;
-    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-  
-  }
-  #bodyPage{
-    margin-top: 200px;
-    /* border: rgb(175, 105, 255) 4px solid;    */
-    width: 100%;
-    height: 100%;
-  
-  }
+}
+*{
+  float: inline-start;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+ 
+}
+
+body > header > #logo {
+  float: left;
+}
+body > header > #logo img{
+  height: 110px;
+}
+header{
+  margin: 0%;
+  padding: 0%;
+
+}
+.borderPage {
+  border: 1px solid #a39292;
+  margin-bottom: 25px;
+}
+#bodyPage{
+  margin-top: 100px;
+  /* border: rgb(175, 105, 255) 4px solid;    */
+  width: 100%;
+  height: 100%;
+
+}
+ h1{
+  text-decoration: underline;
+  /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: 50px;
+}
 
 
 
 
+nav{
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  div > h1{
-    text-decoration: underline;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-align: center;
-    font-size: 50px;
-  }
-  
-  
-  
-  
-  
-  
-  .product-card {
-      width: 200px;
-      height: 400px;
-      padding: 2%;
-      background-color: #FFF;
-      box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.25);
-  
-  }
-  #product_box{
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%;
-  }
-  .product-image {
-      width: 100%;
-      height: 50%;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-  }
-  
-  .product-info {
-      margin-top: auto;
-      padding-top: 20px;
-      text-align: center;
-      height: 20%;
-  }
-  
-    
-    .active {
-      background-color: #4CAF50;
-    }
-    #cart{
-  
-      height: 30px;
-    }
-      #cart_number {
-      height: 20px;
-      width: 20px;
-      background-color: rgb(22, 160, 84);
-      border-radius: 50%;
-      margin-left: -15px;
-      text-align: center;
-      display: inline-block;
-      position: absolute;
-      color: aliceblue;
-    }
-  
+nav img{
+  width: 150px;
+}
+.nav-link{
+  flex: 1;
+  text-align: right;
+}
+.nav-link ul li{
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+
+}
+.nav-link ul li a{
+  color: rgb(8, 8, 8);
+  text-decoration: none;
+  font-size: 15px;
+}
+.nav-link ul li::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #070707;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+.nav-link ul li:hover::after{
+  width: 100%;
+}
+
