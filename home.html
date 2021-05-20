@@ -9,7 +9,7 @@
 </head>
 <link rel="stylesheet" href="./css/home.css">
 <script src="./js/index.js"></script>
-<body onload="checkAdmin(); displayHomeProduct(); return false;">
+<body onload="checkAdmin();  displayWomenProduct(); displayMenProduct(); displayBoysProduct(); displayGirlsProduct(); return false;">
     <header>
         <nav>
         <!-- Logo -->
@@ -42,10 +42,29 @@
         </div>
 
 
-        <div onload="displayHomeProduct(); return false;" id="product_box">    
-        
-        </div>        
-        
+        <h2> WOMEN SECTION</h2>
+        <hr>       
+        <div onload="displayWomenProduct(); return false;" id="women_product_box">    
+        </div>
+
+
+        <h2>MEN SECTION</h2>
+        <hr>       
+        <div onload="displayMenProduct(); return false;" id="men_product_box">    
+        </div>
+
+
+        <h2>BOYS SECTION</h2>
+        <hr>       
+        <div onload="displayBoysProduct(); return false;" id="boys_product_box">    
+        </div>
+
+
+        <h2> GIRLS SECTION</h2>
+        <hr>       
+        <div onload="displayGirlsProduct(); return false;" id="girls_product_box">    
+        </div>
+
 
     </div>
     
