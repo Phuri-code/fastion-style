@@ -357,6 +357,26 @@ function displayHomeProduct(){
         p_price.innerHTML = "$"+obj_product[i].price ;
         p_info.appendChild(p_price);
 
+        var icon_heart = document.createElement("img")
+        // icon_heart.classList.add("iconImg");
+        // icon_heart.src ="./img/heart.png";
+        p_info.appendChild(icon_heart);
+
+        // var icon_email = document.createElement("div");
+        // icon_email.classList.add("iconImg");
+        // // icon_email.style.backgroundImage = src("./img/mail.png")
+        // // icon_email.onclick 
+        // p_detail.appendChild(icon_email);
+
+        // var icon_order = document.createElement("div");
+        // icon_order.classList.add("iconImg");
+        // // icon_order.style.backgroundImage = src("./img/mail.png")
+        // icon_order.onclick= function()
+        // {
+        //     addToCart(obj_product[i]);
+        // }
+
+
         var p_button = document.createElement("button");
         p_button.innerHTML="Add to Cart";
         p_button.onclick = function(){
@@ -407,6 +427,7 @@ function displayHomeProduct(){
 
         product_box.appendChild(p_card);
     }
+    
 }
 
 function addToCart(obj_product){
