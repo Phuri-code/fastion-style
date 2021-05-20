@@ -747,14 +747,6 @@ function likeProduct(product_name, product_description,product_price,product_Url
 
 
 
-
-
-
-
-
-
-
-
 function addToCart(obj_product){
     var cart_number = document.getElementById("cart_number");
 
@@ -832,9 +824,6 @@ function displayCartItem(){
 
 
 
-
-
-
 function deleteCartItem(item_name, item_description, item_price){
     var current_user = JSON.parse(localStorage.getItem("currentUser"));
     for(let i=0; i< current_user.cart.length; i++){
@@ -856,5 +845,77 @@ function deleteCartItem(item_name, item_description, item_price){
         }
     } 
 }
+
+
+function displayWomenProduct(){
+
+    var cart_number = document.getElementById("cart_number");
+    var current_user = JSON.parse(localStorage.getItem("currentUser"));
+    cart_number.innerHTML = current_user.cart.length; 
+
+    var obj_product = JSON.parse(localStorage.getItem("products"));
+    var product_box = document.getElementById("women_product_box");
+
+
+    for(let i= 0 ; i<obj_product.women.length;i++){
+        var p_card = document.createElement("div");
+        p_card.classList.add("product-card");
+
+        var p_image = document.createElement("div");
+        p_image.classList.add("product-image");
+        p_image.style.backgroundImage = "url('"+obj_product.women[i].imageUrl+"')";
+        p_card.appendChild(p_image);
+
+        var p_info = document.createElement("div");
+        p_info.classList.add("product-info");
+
+        var p_name = document.createElement("h5");
+        p_name.innerHTML = obj_product.women[i].name;
+        p_info.appendChild(p_name);
+
+        var p_description = document.createElement("p");
+        p_description.innerHTML = obj_product.women[i].description;
+        p_info.appendChild(p_description);
+
+        var p_price = document.createElement("h5");
+        p_price.innerHTML = "$"+obj_product.women[i].price ;
+        p_info.appendChild(p_price);
+        
+
+        var icon_heart = document.createElement("img");
+        icon_heart.classList.add("iconImg");
+        icon_heart.src ="./img/heart.png";
+        icon_heart.onclick = function(){
+            likeProduct(obj_product.men[i].name,obj_product.men[i].description,obj_product.men[i].price,obj_product.men[i].imageUr )
+        }
+        p_info.appendChild(icon_heart);
+
+        var mail_link = document.createElement("a");
+        mail_link.href="./Contact_Us.html";
+        p_info.appendChild(mail_link);
+
+        var icon_email = document.createElement("img");
+        icon_email.classList.add("iconImg");
+        icon_email.src = "./img/mail.png";
+        mail_link.appendChild(icon_email);
+
+        
+        var icon_order = document.createElement("img");
+        icon_order.classList.add("iconImg");
+        icon_order.src ="./img/order.png";
+        icon_order.onclick = function(){
+            addToCart(obj_product.women[i]);
+        }
+
+        p_info.appendChild(icon_order);
+
+        p_card.appendChild(p_info);
+
+        product_box.appendChild(p_card);
+    }
+
+
+}
+
 
 
