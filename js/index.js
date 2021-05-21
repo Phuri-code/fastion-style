@@ -182,9 +182,7 @@ function checkAdmin(){
 function diplayCurrentUser (){
 
     var currentUser =  JSON.parse(localStorage.getItem("currentUser"))  ;
-    document.write(currentUser.name) = getElementById(user_name);
-
-
+    document.getElementById("cureent_user_name").innerHTML = document.write(currentUser.name);
 
 }
 
