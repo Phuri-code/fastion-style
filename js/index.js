@@ -182,9 +182,11 @@ function checkAdmin(){
 function diplayCurrentUser (){
 
     var currentUser =  JSON.parse(localStorage.getItem("currentUser"))  ;
-    document.getElementById("cureent_user_name").innerHTML = document.write(currentUser.name);
-
+    document.getElementById("cureent_user_name").innerHTML = currentUser.Name;
+    document.getElementById("cureent_gmail_user").innerHTML = currentUser.email;
 }
+
+
 
 function addProduct(){
     var product_form = document.getElementById("add_product");
