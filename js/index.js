@@ -784,8 +784,6 @@ function displayCartItem(){
 }
 
 
-
-
 function deleteCartItem(item_name, item_description, item_price){
     var current_user = JSON.parse(localStorage.getItem("currentUser"));
     for(let i=0; i< current_user.cart.length; i++){
@@ -807,6 +805,10 @@ function deleteCartItem(item_name, item_description, item_price){
         }
     } 
 }
+
+
+
+
 
 
 function displayWomenProduct(){
@@ -848,7 +850,14 @@ function displayWomenProduct(){
         icon_heart.classList.add("iconImg");
         icon_heart.src ="./img/heart.png";
         icon_heart.onclick = function(){
-            likeProduct(obj_product.men[i].name,obj_product.men[i].description,obj_product.men[i].price,obj_product.men[i].imageUr )
+            if(this.src.match("./img/heart.png"))
+            {
+                this.src= "./img/heart (1).png"
+            }
+            else
+            {
+                this.src = "./img/heart.png";
+            }
         }
         p_info.appendChild(icon_heart);
 
@@ -878,7 +887,6 @@ function displayWomenProduct(){
 
 
 }
-
 
 function displayMenProduct(){
 
@@ -918,7 +926,14 @@ function displayMenProduct(){
         icon_heart.classList.add("iconImg");
         icon_heart.src ="./img/heart.png";
         icon_heart.onclick = function(){
-            likeProduct(obj_product.men[i].name,obj_product.men[i].description,obj_product.men[i].price,obj_product.men[i].imageUr )
+            if(this.src.match("./img/heart.png"))
+            {
+                this.src= "./img/heart (1).png"
+            }
+            else
+            {
+                this.src = "./img/heart.png";
+            }
         }
         p_info.appendChild(icon_heart);
 
@@ -988,7 +1003,14 @@ function displayBoysProduct(){
         icon_heart.classList.add("iconImg");
         icon_heart.src ="./img/heart.png";
         icon_heart.onclick = function(){
-            likeProduct(obj_product.men[i].name,obj_product.men[i].description,obj_product.men[i].price,obj_product.men[i].imageUr )
+            if(this.src.match("./img/heart.png"))
+            {
+                this.src= "./img/heart (1).png"
+            }
+            else
+            {
+                this.src = "./img/heart.png";
+            }
         }
         p_info.appendChild(icon_heart);
 
@@ -1059,7 +1081,14 @@ function displayGirlsProduct(){
         icon_heart.classList.add("iconImg");
         icon_heart.src ="./img/heart.png";
         icon_heart.onclick = function(){
-            likeProduct(obj_product.men[i].name,obj_product.men[i].description,obj_product.men[i].price,obj_product.men[i].imageUr )
+            if(this.src.match("./img/heart.png"))
+            {
+                this.src= "./img/heart (1).png"
+            }
+            else
+            {
+                this.src = "./img/heart.png";
+            }
         }
         p_info.appendChild(icon_heart);
 
