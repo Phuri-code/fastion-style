@@ -66,9 +66,6 @@ body{
   .nav-link ul li:hover::after{
     width: 100%;
   }
-
-  
-
 #bodyPage{
     margin: auto;
     margin-top: 50px;
@@ -78,17 +75,24 @@ body{
 
 #user_info{
     width: 30%;
-    padding: 20px;
+    padding: 50px;
     margin-left: 20px;
     box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.25);
 
     /* border: solid rgb(4, 0, 255) 4px; */
+}
 
+label{
+  margin-right: 15px;
+}
+.sub_container{
+  text-align: left;
+  display: flex;
 }
 
 #p_ordered{
     width: 65%;
-    margin-left: 10px;
+    margin-left: 20px;
     box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.25);
 
     /* border: solid rgb(0, 255, 213) 4px; */
