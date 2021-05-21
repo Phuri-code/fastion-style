@@ -1127,7 +1127,7 @@ function displayOrderedProduct(){
         let delete_button = document.createElement("button");
         delete_button.innerHTML = "Delete";
         delete_button.onclick = function(){
-            deleteCartItem(current_user.cart[i].name, current_user.cart[i].description,current_user.cart[i].price);
+            deleteOrderedProduct(current_user.cart[i].name, current_user.cart[i].description,current_user.cart[i].price);
         }
         p_action.appendChild(delete_button);
         p_row.appendChild(p_action);
@@ -1139,6 +1139,31 @@ function displayOrderedProduct(){
     var total_element = document.getElementById("total_price");
     total_element.innerHTML = "$"+total_price;
 }
+
+function deleteOrderedProduct(item_name, item_description, item_price){
+    var current_user = JSON.parse(localStorage.getItem("currentUser"));
+    for(let i=0; i< current_user.cart.length; i++){
+        if(current_user.cart[i].name ==item_name && current_user.cart[i].description ==item_description && current_user.cart[i].price ==item_price){
+            current_user.cart.splice(i,1);
+            break;
+        } 
+    }
+    localStorage.setItem("currentUser",JSON.stringify(current_user));
+
+    var all_users = JSON.parse(localStorage.getItem("users"));
+    for(let j=0; j<all_users.length;j++){
+        if(all_users[j].email == current_user.email){
+            all_users[j].cart = current_user.cart;
+            notifyMessage("Product is removed", "green");
+            displayOrderedProduct()            
+
+            localStorage.setItem("users", JSON.stringify(all_users));
+            break;
+        }
+    } 
+}
+
+
 
 
 
