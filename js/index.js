@@ -175,6 +175,15 @@ function checkAdmin(){
     else{
         link_element.style.visibility = "hidden";
     }
+}
+
+// Not Yet
+
+function diplayCurrentUser (){
+
+    var currentUser =  JSON.parse(localStorage.getItem("currentUser"))  ;
+    document.write(currentUser.name) = getElementById(user_name);
+
 
 
 }
