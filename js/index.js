@@ -1089,6 +1089,67 @@ function displayGirlsProduct(){
 
 }
 
+function displayOrderedProduct(){
+    var p_table = document.getElementById("ordered_product");
+    p_table.innerHTML = "";
+
+    var current_user = JSON.parse(localStorage.getItem("currentUser"));
+
+    var header = document.createElement("tr");
+    header.innerHTML = "<th>Name</th><th>Image</th><th>Description</th><th>Price</th><th>Action</th>";
+
+    p_table.appendChild(header);
+
+    var total_price = 0;
+    for(let i=0; i< current_user.cart.length; i++){
+        let p_row = document.createElement("tr");
+
+        let p_name = document.createElement("td");
+        p_name.innerHTML = current_user.cart[i].name;
+        p_row.appendChild(p_name);
+
+        let p_image = document.createElement("td");
+        let img = document.createElement("img");
+        img.src = current_user.cart[i].imageUrl;
+        p_image.appendChild(img);
+        p_row.appendChild(p_image);
+
+        let p_description = document.createElement("td");
+        p_description.innerHTML = current_user.cart[i].description;
+        p_row.appendChild(p_description);
+
+        let p_price = document.createElement("td");
+        p_price.innerHTML = current_user.cart[i].price +"$";
+        p_row.appendChild(p_price);
+        
+        
+        let p_action = document.createElement("td");
+        let delete_button = document.createElement("button");
+        delete_button.innerHTML = "Delete";
+        delete_button.onclick = function(){
+            deleteCartItem(current_user.cart[i].name, current_user.cart[i].description,current_user.cart[i].price);
+        }
+        p_action.appendChild(delete_button);
+        p_row.appendChild(p_action);
+        p_table.appendChild(p_row);
+
+        total_price=total_price + Number(current_user.cart[i].price)
+    }
+
+    var total_element = document.getElementById("total_price");
+    total_element.innerHTML = "$"+total_price;
+}
+
+
+
+
+
+
+
+
+
+
+
 var slideIndex = 1;
 
 function plusSlides(n) {
