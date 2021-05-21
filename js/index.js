@@ -3,6 +3,7 @@
 function setAdmin(){
     if(localStorage.getItem("users")==null){
         let admin_user = {
+
             email: "admin@gmail.com",
             password: "admin",
             cart:[]
@@ -177,7 +178,6 @@ function checkAdmin(){
     }
 }
 
-// Not Yet
 
 function diplayCurrentUser (){
 
@@ -713,10 +713,6 @@ function likeProduct(product_name, product_description,product_price,product_Url
     }
   }
 }
-
-
-
-
 
 function addToCart(obj_product){
     var cart_number = document.getElementById("cart_number");
