@@ -2,7 +2,7 @@
 body{
    
   height: 100vh;
-  text-align: left;
+  text-align: center;
   padding: 5px;
   /* background-color: #f3f0eb; */
   margin: 0%;
@@ -88,4 +88,12 @@ nav img{
 .nav-link ul li:hover::after{
   width: 100%;
 }
+.skills{
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+
 
