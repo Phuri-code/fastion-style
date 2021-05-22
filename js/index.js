@@ -145,7 +145,7 @@ function resetPassword(){
                     obj_users[i].password = input_new_password;
                     localStorage.setItem("users", JSON.stringify(obj_users));
                     notifyMessage("Reset Password Succesful", "green");
-                    window.open('./home.html',"_self");
+                    window.open('./login.html',"_self");
 
                     break;
 
@@ -158,7 +158,6 @@ function resetPassword(){
         else if(!isMatchPassword){
             notifyMessage("Old Password is not matched!", "red");
         }
-        window.open("./home.html","_self");
 
     }
 }
