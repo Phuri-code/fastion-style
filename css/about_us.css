@@ -17,17 +17,7 @@ body{
  
 }
 
-body > header > #logo {
-  float: left;
-}
-body > header > #logo img{
-  height: 110px;
-}
-header{
-  margin: 0%;
-  padding: 0%;
-
-}
+  
 .borderPage {
   border: 1px solid #a39292;
   margin-bottom: 25px;

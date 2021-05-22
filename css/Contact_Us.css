@@ -9,15 +9,47 @@
 body{
     /* display: flex; */
     min-height: 100vh;
-    background-color: #d6c5c5ec;
+    background-color: #fcf8f8ec;
     
    
 }
- #logo {
-    float: left;
+nav{
+    display: flex;
+    padding: 2% 0%;
+    justify-content: space-between;
+    align-items: center;
   }
- #logo img{
-    height: 110px;
+  
+  nav img{
+    width: 150px;
+  }
+  .nav-link{
+    flex: 1;
+    text-align: right;
+  }
+  .nav-link ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+  
+  }
+  .nav-link ul li a{
+    color: rgb(8, 8, 8);
+    text-decoration: none;
+    font-size: 15px;
+  }
+  .nav-link ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #070707;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+  }
+  .nav-link ul li:hover::after{
+    width: 100%;
   }
 .contact-section{
     width: 100%;
