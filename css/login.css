@@ -63,15 +63,7 @@ nav{
     height: 95%;
     margin-left: 350px;
     /* border: solid rgb(4, 0, 255) 4px; */
-
-    
-
-
 }
-
-  
-
-
 .container{
     margin-top: 50px;
     margin-left: 80px;
@@ -84,10 +76,6 @@ nav{
     /* background: linear-gradient(135deg, #fefcee, #e6d1ab); */
     background: linear-gradient(135deg, #bfbfbf, #efefef);
     border: solid #52160d 4px;
-    /* box-shadow: 2px 2px 30px rgba(6, 6, 6, 0.3); */
-
-
-
 }
 
 .title{
