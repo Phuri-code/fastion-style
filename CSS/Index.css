@@ -16,44 +16,49 @@ body{
  
 }
 
-body > header > #logo {
-  float: left;
-}
-body > header > #logo img{
-  height: 110px;
-}
-header{
-  margin: 0%;
-  padding: 0%;
-
-}
-body> header> #main-navigation{
-  float: right;
-  margin-top: 50px;
-
-}
-.web-tab{
-  display: inline-block;     
-}
-.tab{
-  width: 110px;
-  border: none;
-  font-size: large;
-  border-radius: 5px;
-  background-color: white;
-}
-.tab:hover{
-  border: turquoise 1px solid;
-  border-color: aqua; 
-  letter-spacing: 1px;
+nav{
+  display: flex;
+  padding: 2% 0%;
+  justify-content: space-between;
+  align-items: center;
 }
 
+nav img{
+  width: 150px;
+}
+.nav-link{
+  flex: 1;
+  text-align: right;
+}
+.nav-link ul li{
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+
+}
+.nav-link ul li a{
+  color: rgb(8, 8, 8);
+  text-decoration: none;
+  font-size: 15px;
+}
+.nav-link ul li::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #070707;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+.nav-link ul li:hover::after{
+  width: 100%;
+}
 
 
 #bodyPage{
   margin: auto;
   margin-right: 300px;
-  margin-top: 100px;
   display: flex;
   width: 60%;
   height: 95%;
@@ -101,7 +106,7 @@ hr{
 .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 60%;
   width: 5px;
   padding: 16px;
   color: rgb(26, 20, 20);
