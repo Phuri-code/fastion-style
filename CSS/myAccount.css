@@ -25,7 +25,6 @@ body{
     /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
     font-family: "Poppins", sans-serif;
     text-align: center;
-    font-size: 50px;
   }  
 
   nav{
@@ -88,6 +87,7 @@ label{
 .sub_container{
   text-align: left;
   display: flex;
+  margin: 25px;
 }
 
 #p_ordered{
